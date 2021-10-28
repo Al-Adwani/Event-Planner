@@ -1,0 +1,15 @@
+{
+  "name": "Event-Planner",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:Al-Adwani/Event-Planner.git",
+  "author": "<abdullahmmaladwani@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  }
+}
