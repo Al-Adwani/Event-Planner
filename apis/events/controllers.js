@@ -23,9 +23,9 @@ const fitchDetail = async (req, res, next) => {
 
 const EventFitchFull = async (req, res, next) => {
   try {
-    
-    const events = await Event.find({ $expr: { $eq:[ "bookedSeats",  "numOfSeats" ]} })
-    
+    let events = await Event.find();
+    events = events.filter((event) => event.bookedSeats === event.numOfSeats);
+    console.log(events);
     res.json(events);
     console.log("EventFitchFull is working");
   } catch (error) {

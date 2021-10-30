@@ -9,7 +9,7 @@ const {
   fitchDetail,
   EventFitchFull,
 } = require("./controllers");
-router.get("/api/events", EventFitchFull);
+router.get("/api/events/fullyBooked", EventFitchFull);
 
 router.get("/api/events", EventFitch);
 router.get("/api/events/:eventId", fitchDetail);
