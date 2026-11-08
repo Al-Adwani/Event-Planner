@@ -24,7 +24,14 @@ const EventSchema = new mongoose.Schema({
   bookedSeats: {
     type: Number,
     default: 0,
-    required: (num) => this.numOfSeats >= num,
+    min: 0,
+    validate: {
+      // Regular function (not arrow) so `this` is the document being saved.
+      validator: function (num) {
+        return this.numOfSeats == null || num <= this.numOfSeats;
+      },
+      message: "bookedSeats ({VALUE}) cannot exceed numOfSeats",
+    },
   },
   startDate: Date,
   endDate: Date,
