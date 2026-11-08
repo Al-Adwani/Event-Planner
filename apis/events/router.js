@@ -8,8 +8,10 @@ const {
   eventUpdate,
   fitchDetail,
   EventFitchFull,
+  EventFitchUpcoming,
 } = require("./controllers");
 router.get("/api/events/fullyBooked", EventFitchFull);
+router.get("/api/events/upcoming", EventFitchUpcoming);
 
 router.get("/api/events", EventFitch);
 router.get("/api/events/:eventId", fitchDetail);
